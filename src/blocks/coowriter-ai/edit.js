@@ -200,7 +200,7 @@ export default function Edit( { clientId, isSelected } ) {
 					</div>
 					<button
 						type="button"
-						title={ isPinned ? 'Unpin' : 'Pin' }
+						title={ isPinned ? 'Unstick from bottom' : 'Stick to bottom' }
 						className={ classNames( 'cursor-pointer', {
 							'text-gray-500 hover:text-gray-700': ! isPinned,
 							'text-gray-800 hover:text-black': isPinned,
