@@ -39,7 +39,7 @@ export function Status( {
 			<span>
 				{ isUseSelectionMode
 					? 'AI will only modify the selected blocks.'
-					: 'Press Cmd + Enter to generate and Esc to close.' }
+					: 'Press Enter to generate and Esc to close.' }
 			</span>
 		</div>
 	);

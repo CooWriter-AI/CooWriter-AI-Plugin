@@ -229,7 +229,7 @@ export default function Edit( { clientId, isSelected } ) {
 					disabled={ isLoading }
 					onChange={ ( event ) => setMessage( event.target.value ) }
 					onKeyDown={ ( event ) => {
-						if ( event.key === 'Enter' && event.metaKey ) {
+						if ( event.key === 'Enter' && !event.shiftKey ) {
 							event.preventDefault();
 							handleSubmit( event );
 						}
@@ -271,7 +271,7 @@ export default function Edit( { clientId, isSelected } ) {
 						</button>
 					</Tooltip>
 
-					<Tooltip text="Generate" shortcut={ '⌘ + ↵' }>
+					<Tooltip text="Generate" shortcut={ '↵' }>
 						<button
 							type="submit"
 							className="p-1 rounded cursor-pointer border border-black bg-black text-white hover:bg-gray-50 hover:text-black transition-all duration-200"
