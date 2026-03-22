@@ -17,7 +17,7 @@ CooWriter AI is an AI-powered writing assistant and content generator that lives
 
 ## Demo
 
-https://youtu.be/A8ga5mhyRSQ
+https://youtu.be/uJm8PSWwJp8
 
 ## Everything You Need to Publish Faster
 
@@ -94,10 +94,11 @@ CooWriter AI is open source and welcomes contributions!
 == Screenshots ==
 
 1. CooWriter AI assistant in the Block Editor.
-2. CooWriter AI image generation modal.
-3. CooWriter AI image generation result.
-4. Post generated with CooWriter AI.
+2. Selection mode to target a specific block for AI assistance.
+3. CooWriter AI image generation.
+4. Minor UI customization using CooWriter AI.
 5. CooWriter AI assistant input panel.
+6. CooWriter AI settings page to add API key.
 
 == Frequently Asked Questions ==
 
