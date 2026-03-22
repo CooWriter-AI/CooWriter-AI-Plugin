@@ -1,5 +1,5 @@
 import { useState, useEffect } from '@wordpress/element';
-import { request } from '../../../libs/request';
+import { request } from '../libs/request';
 
 export const useSubscription = () => {
 	const [ isLoading, setIsLoading ] = useState( true );
@@ -42,6 +42,5 @@ export const useSubscription = () => {
 	return {
 		isLoading,
 		subscription: isLoading || ! subscription ? null : subscription,
-		setSubscription,
 	};
 };

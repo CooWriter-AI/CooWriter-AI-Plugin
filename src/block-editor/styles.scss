@@ -1,0 +1,37 @@
+:root {
+	--coowriter-ai-highlight-color: #b4b5ff44;
+}
+
+[data-coowriter-ai-highlighted]::before {
+	content: "";
+	position: absolute;
+	top: -5px;
+	inset-inline-start: -10px;
+	width: calc(100% + 20px);
+	height: calc(100% + 10px);
+	background: var(--coowriter-ai-highlight-color);
+	backdrop-filter: blur(10px);
+	border-radius: 4px;
+	background-repeat: no-repeat;
+	z-index: -100;
+}
+
+[data-coowriter-ai-highlighted="true"]::before {
+	background: repeating-linear-gradient(to right, var(--coowriter-ai-highlight-color) 0%, #e4e8ff44 50%, var(--coowriter-ai-highlight-color) 100%);
+	animation: gradient-loading 1000ms infinite;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+	background-size: 200% auto;
+	background-position: 0 100%;
+}
+
+@keyframes gradient-loading {
+
+	0% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: -200% 0;
+	}
+}

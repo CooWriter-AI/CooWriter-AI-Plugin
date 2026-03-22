@@ -10,19 +10,19 @@ export async function processTask( {
 	allBlocks = getSelectedBlocks(),
 	selectedBlocks,
 	blocksReplacer,
-	updateSubscription = () => {},
 } ) {
 	try {
 		const allBlocksData = allBlocks.map( extractBlockData );
 		const selectedBlocksData = selectedBlocks?.map( extractBlockData );
 
-		const { blocks: generatedBlocksData = [], subscription } =
-			await generateBlocks( message, allBlocksData, selectedBlocksData );
+		const { blocks: generatedBlocksData = [] } = await generateBlocks(
+			message,
+			allBlocksData,
+			selectedBlocksData
+		);
 
 		const generatedBlocks = createBlocks( generatedBlocksData );
 		await blocksReplacer( selectedBlocks || allBlocks, generatedBlocks );
-
-		updateSubscription( subscription );
 
 		return { success: true };
 	} catch ( error ) {

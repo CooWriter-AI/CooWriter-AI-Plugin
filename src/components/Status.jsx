@@ -1,18 +1,12 @@
 import { useState, useEffect } from '@wordpress/element';
-import {
-	CheckCheck,
-	LoaderCircle,
-	Sparkles,
-	AlertTriangle,
-	X,
-} from 'lucide-react';
+import { __ } from '@wordpress/i18n';
+import { CheckCheck, LoaderCircle, AlertTriangle, X } from 'lucide-react';
 
 export function Status( {
 	isLoading,
 	isSuccess,
 	error,
 	warning,
-	isUseSelectionMode,
 	resetStatus,
 } ) {
 	if ( isLoading ) {
@@ -31,23 +25,12 @@ export function Status( {
 		return <WarningMessage warning={ warning } />;
 	}
 
-	return (
-		<div className="flex items-center gap-1">
-			<span className="block">
-				<Sparkles size={ 16 } className="text-[#6366f1]" />
-			</span>
-			<span>
-				{ isUseSelectionMode
-					? 'AI will only modify the selected blocks.'
-					: 'Press Enter to generate and Esc to close.' }
-			</span>
-		</div>
-	);
+	return null;
 }
 
 function ErrorMessage( { error } ) {
 	return (
-		<div className="flex items-center gap-1">
+		<div className="text-gray-600 me-2 w-full flex items-center gap-1">
 			<span className="block">
 				<X size={ 16 } className="text-red-600" />
 			</span>
@@ -58,7 +41,7 @@ function ErrorMessage( { error } ) {
 
 function WarningMessage( { warning } ) {
 	return (
-		<div className="flex items-center gap-1">
+		<div className="text-gray-600 me-2 w-full flex items-center gap-1">
 			<span className="block">
 				<AlertTriangle size={ 16 } className="text-orange-600" />
 			</span>
@@ -69,11 +52,11 @@ function WarningMessage( { warning } ) {
 
 // Progressive loading messages
 const LOADING_MESSAGES = [
-	'Analyzing your request 🧠',
-	'Crafting creative content ❇️',
-	'Structuring your ideas 📚',
-	'Adding finishing touches 🎨',
-	'Almost ready to amaze you 🚀',
+	__( 'Analyzing your request 🧠', 'coowriter-ai' ),
+	__( 'Crafting creative content ❇️', 'coowriter-ai' ),
+	__( 'Structuring your ideas 📚', 'coowriter-ai' ),
+	__( 'Adding finishing touches 🎨', 'coowriter-ai' ),
+	__( 'Almost ready to amaze you 🚀', 'coowriter-ai' ),
 ];
 
 function LoadingMessage() {
@@ -90,11 +73,11 @@ function LoadingMessage() {
 	}, [] );
 
 	return (
-		<div className="flex items-center gap-1">
+		<div className="text-gray-600 me-2 w-full flex items-center gap-1">
 			<span className="block">
 				<LoaderCircle
 					size={ 16 }
-					className="text-yellow-500 animate-[spin_800ms_linear_infinite]"
+					className="text-indigo-500 animate-[spin_800ms_linear_infinite]"
 				/>
 			</span>
 			<span>{ LOADING_MESSAGES[ messageIndex ] }</span>
@@ -112,11 +95,13 @@ function SuccessMessage( { onClose } ) {
 	}, [ onClose ] );
 
 	return (
-		<div className="flex items-center gap-1">
+		<div className="text-gray-600 me-2 w-full flex items-center gap-1">
 			<span className="block">
 				<CheckCheck size={ 16 } className="text-green-700" />
 			</span>
-			<span>Content generated successfully!</span>
+			<span>
+				{ __( 'Content generated successfully!', 'coowriter-ai' ) }
+			</span>
 		</div>
 	);
 }

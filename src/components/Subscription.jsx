@@ -4,14 +4,17 @@ import {
 	LoaderCircle,
 	TrendingUp,
 } from 'lucide-react';
+import { useSubscription } from '../hooks/useSubscription';
 
-export function Subscription( { isLoading, subscription } ) {
+export function Subscription() {
+	const { isLoading, subscription } = useSubscription();
+
 	if ( isLoading ) {
 		return (
-			<div className="py-2.5 px-3 border-t border-gray-200 flex items-center justify-center h-[100px]">
+			<div className="flex items-center justify-center h-[100px]">
 				<LoaderCircle
 					size={ 24 }
-					className="animate-spin text-[#6366f1]"
+					className="animate-spin text-indigo-500"
 				/>
 			</div>
 		);
@@ -21,24 +24,17 @@ export function Subscription( { isLoading, subscription } ) {
 
 	if ( ! planId || ! expiresAt || ! totalCredits ) {
 		return (
-			<div className="py-2.5 px-3 border-t border-gray-200 text-center">
-				<div className="text-gray-700 mb-4">
+			<div className="text-center">
+				<div className="text-gray-700 mb-4 bg-yellow-50 text-sm px-3 py-2 rounded">
 					Connect your account to start using AI writing features
 				</div>
-				<a
-					href={ window.cooWriterAIBlocksObj.settingsURL }
-					className="bg-[#5558e4] text-white px-3 py-1.5 rounded text-sm no-underline hover:text-[#5558e4] hover:bg-transparent hover:border hover:border-[#5558e4]"
-					rel="noreferrer"
-				>
-					Add API Key
-				</a>
 			</div>
 		);
 	}
 
 	return (
-		<div className="py-2.5 px-3 border-t border-gray-200">
-			<div className="flex items-center gap-1 justify-between">
+		<div>
+			<div className="flex items-center gap-3">
 				<div className="text-black text-lg">Subscription</div>
 				<SubscriptionType planId={ planId } />
 			</div>
@@ -51,9 +47,9 @@ export function Subscription( { isLoading, subscription } ) {
 					/ { totalCredits } Credits left
 				</span>
 			</div>
-			<div className="h-2 bg-gray-200 rounded-full w-full mt-2">
+			<div className="h-2 bg-gray-300 rounded-full w-full mt-2">
 				<div
-					className="h-full bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
+					className="h-full bg-indigo-500 rounded-full"
 					style={ {
 						width: `${
 							( ( totalCredits - usedCredits ) / totalCredits ) *
@@ -78,7 +74,7 @@ export function Subscription( { isLoading, subscription } ) {
 				<a
 					href="https://coowriterai.com/#pricing"
 					target="_blank"
-					className="!text-[#5558e4] flex items-center gap-2 mt-4 hover:underline"
+					className="text-indigo-600 flex items-center gap-2 mt-4 hover:underline"
 					rel="noreferrer"
 				>
 					<CircleFadingArrowUp size={ 20 } stroke="currentColor" />

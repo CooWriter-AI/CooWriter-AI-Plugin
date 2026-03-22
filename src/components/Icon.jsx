@@ -1,34 +1,14 @@
-export function BlockIcon() {
+export function Icon( { size = 24 } ) {
 	return (
 		<svg
-			width="256"
-			height="256"
+			width={ size }
+			height={ size }
 			viewBox="0 0 256 256"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			{ /* Gradient background. */ }
-			<defs>
-				<linearGradient
-					id="gradient"
-					x1="0%"
-					y1="0%"
-					x2="100%"
-					y2="100%"
-				>
-					<stop offset="0%" stopColor="#427cfc" />
-					<stop offset="100%" stopColor="#ad49f5" />
-				</linearGradient>
-			</defs>
-
 			{ /* Background. */ }
-			<rect
-				width="256"
-				height="256"
-				rx="40"
-				ry="40"
-				fill="url(#gradient)"
-			/>
+			<rect width="256" height="256" rx="40" ry="40" fill="#6366F1" />
 
 			{ /* Combined C and W as a single path. */ }
 			<path

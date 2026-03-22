@@ -1,5 +1,5 @@
 export function request( path, data ) {
-	const { ajaxURL, nonce, action } = window.cooWriterAIApiObj || {};
+	const { ajaxURL, nonce, action } = window.cooWriterAIApiConfig || {};
 
 	if ( ! ajaxURL || ! nonce || ! action ) {
 		throw new Error( 'CooWriter AI API is not initialized' );

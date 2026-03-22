@@ -23,14 +23,14 @@ const generateImages = async ( prompt, aspectRatio ) => {
 	const data = await response.json();
 
 	const imageURLs = data?.images
-		?.filter( image => image.bytes )
-		.map( image => `data:image/png;base64,${ image.bytes }` );
+		?.filter( ( image ) => image.bytes )
+		.map( ( image ) => `data:image/png;base64,${ image.bytes }` );
 
-	if ( !imageURLs?.length ) {
+	if ( ! imageURLs?.length ) {
 		throw new Error( 'No images generated' );
 	}
 
-	return imageURLs
+	return imageURLs;
 };
 
 export const Imagen = ( { defaultPrompt = '', onUseImage } ) => {
@@ -55,22 +55,22 @@ export const Imagen = ( { defaultPrompt = '', onUseImage } ) => {
 		setStatusMessage( 'Generating image...' );
 
 		try {
-			const generatedImageURLs = await generateImages( prompt, aspectRatio );
-
-			console.log( generatedImageURLs );
+			const generatedImageURLs = await generateImages(
+				prompt,
+				aspectRatio
+			);
 
 			setImage( {
 				alt: prompt.trim(),
-				src: generatedImageURLs[0],
+				src: generatedImageURLs[ 0 ],
 			} );
 
 			setStatus( 'success' );
 			setStatusMessage( 'Image generated successfully' );
 		} catch ( error ) {
-			console.error(error);
 			setStatus( 'error' );
 			setStatusMessage( 'Failed to generate image' );
-		} 
+		}
 	};
 
 	const imageClasses = classNames(

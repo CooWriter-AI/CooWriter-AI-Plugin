@@ -1,0 +1,30 @@
+{
+	"name": "coowriter-ai/coowriter-ai",
+	"type": "wordpress-plugin",
+	"license": "GPL-3.0-or-later",
+	"autoload": {
+		"psr-4": {
+			"CooWriterAI\\": "includes/",
+			"CooWriterAI\\Traits\\": "includes/traits/"
+		}
+	},
+	"authors": [
+		{
+			"name": "CooWriter AI"
+		}
+	],
+	"scripts": {
+		"lint:php": "phpcs",
+		"lint:php:fix": "phpcbf"
+	},
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^3.3",
+		"automattic/vipwpcs": "^3.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

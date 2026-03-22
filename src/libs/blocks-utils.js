@@ -1,6 +1,5 @@
 import { select, dispatch } from '@wordpress/data';
 import { createBlock } from '@wordpress/blocks';
-import metadata from '../blocks/coowriter-ai/metadata.json';
 
 export function getSelectedBlocks() {
 	const blockEditorSelect = select( 'core/block-editor' );
@@ -40,12 +39,10 @@ export function createBlocks( blocks ) {
 }
 
 export function getAllBlocks() {
-	return select( 'core/block-editor' )
-		.getBlocks()
-		.filter( ( block ) => block.name !== metadata.name );
+	return select( 'core/block-editor' ).getBlocks();
 }
 
-export function addOrReplaceBlocks( oldBlocks, newBlocks, clientId ) {
+export function addOrReplaceBlocks( oldBlocks, newBlocks ) {
 	if ( oldBlocks?.length ) {
 		return dispatch( 'core/block-editor' ).replaceBlocks(
 			oldBlocks.map( ( block ) => block.clientId ),
@@ -53,24 +50,5 @@ export function addOrReplaceBlocks( oldBlocks, newBlocks, clientId ) {
 		);
 	}
 
-	const rootClientId =
-		select( 'core/block-editor' ).getBlockRootClientId( clientId );
-	const blockIndex = select( 'core/block-editor' ).getBlockIndex( clientId );
-
-	return dispatch( 'core/block-editor' ).insertBlocks(
-		newBlocks,
-		blockIndex,
-		rootClientId
-	);
-}
-
-export function removeOtherCooWriterBlocks( clientId ) {
-	const allBlocks = select( 'core/block-editor' ).getBlocks();
-	const cooWriterBlocks = allBlocks.filter(
-		( block ) => block.name === metadata.name && block.clientId !== clientId
-	);
-
-	dispatch( 'core/block-editor' ).removeBlocks(
-		cooWriterBlocks.map( ( block ) => block.clientId )
-	);
+	return dispatch( 'core/block-editor' ).insertBlocks( newBlocks );
 }

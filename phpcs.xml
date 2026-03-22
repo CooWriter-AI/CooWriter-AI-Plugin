@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<ruleset name="CustomStandards">
+	<description>Custom Coding Standards for CooWriter AI Plugin</description>
+	<config name="php_version" value="80100" />
+	<config name="minimum_supported_wp_version" value="6.7" />
+	<config name="testVersion" value="8.1-"/>
+
+	<file>./coowriter-ai.php</file>
+	<file>./includes</file>
+
+	<rule ref="WordPress-Core">
+		<exclude name="Squiz.Commenting.FileComment.Missing" />
+		<exclude name="Squiz.Commenting.FunctionComment.Missing" />
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+	</rule>
+	<rule ref="WordPress-Docs" />
+	<rule ref="WordPress-Extra" />
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="coowriter-ai" />
+				<element value="default" />
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress-VIP-Go" />
+
+	<rule ref="PHPCompatibilityWP" />
+</ruleset>

@@ -1,5 +1,8 @@
 export default {
 	plugins: {
-		'@tailwindcss/postcss': {},
+		'@tailwindcss/postcss': {
+			// only look into src directory for tailwindcss classes.
+			base: './src',
+		},
 	},
 };

@@ -8,16 +8,24 @@ const plugins = defaultConfig.plugins.filter(
 
 export default {
 	...defaultConfig,
-	entry: {
-		index: './src/index.js',
-		blocks: './src/blocks/index.js',
+	devServer: {
+		...defaultConfig.devServer,
+		port: 8800,
 	},
-	output: {
-		path: path.resolve( import.meta.dirname, 'build' ),
-		filename: '[name].js',
+	entry: {
+		assistant: path.resolve(
+			import.meta.dirname,
+			'src/assistant/index.tsx'
+		),
+		imagen: path.resolve( import.meta.dirname, 'src/imagen/index.jsx' ),
+		settings: path.resolve( import.meta.dirname, 'src/settings/index.tsx' ),
+		'block-editor': path.resolve(
+			import.meta.dirname,
+			'src/block-editor/index.ts'
+		),
 	},
 	watchOptions: {
-		ignored: [ '**/build' ],
+		ignored: [ '**/build', '**/vendor', '**/node_modules' ],
 	},
 	module: {
 		...defaultConfig.module,

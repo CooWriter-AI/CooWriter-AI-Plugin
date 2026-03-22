@@ -2,7 +2,7 @@ import { useState } from '@wordpress/element';
 import { addFilter } from '@wordpress/hooks';
 import { BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup, ToolbarButton, Modal } from '@wordpress/components';
-import { BlockIcon } from '../blocks/coowriter-ai/components/BlockIcon';
+import { Icon } from '../components/Icon';
 import { Imagen } from './imagen';
 
 const CustomImageButton = ( BlockEdit ) => ( props ) => {
@@ -29,7 +29,7 @@ const ImagenControls = ( props ) => {
 		<BlockControls>
 			<ToolbarGroup>
 				<ToolbarButton
-					icon={ <BlockIcon /> }
+					icon={ <Icon size={ 24 } /> }
 					label="Generate Image using CooWriter AI"
 					onClick={ handleCustomClick }
 				/>

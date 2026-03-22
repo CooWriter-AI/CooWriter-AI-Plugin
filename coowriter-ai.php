@@ -14,22 +14,22 @@
 
 namespace CooWriterAI;
 
-if (! defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if (! defined('COOWRITER_AI_API_URL')) {
-	define('COOWRITER_AI_API_URL', 'https://coowriterai.com');
+require_once __DIR__ . '/vendor/autoload.php';
+
+if ( ! defined( 'COOWRITER_AI_API_URL' ) ) {
+	define( 'COOWRITER_AI_API_URL', 'https://coowriterai.com' );
 }
 
-const API_URL = COOWRITER_AI_API_URL;
-const PLUGIN_DIR = __DIR__;
+const API_URL     = COOWRITER_AI_API_URL;
+const PLUGIN_DIR  = __DIR__;
 const PLUGIN_FILE = __FILE__;
 
-include_once __DIR__ . '/includes/settings.php';
-include_once __DIR__ . '/includes/blocks.php';
-include_once __DIR__ . '/includes/api.php';
-
-Settings\bootstrap();
-Blocks\bootstrap();
-API\bootstrap();
+Settings::get_instance();
+Assistant::get_instance();
+APIProxy::get_instance();
+BlockEditor::get_instance();
+Imagen::get_instance();
