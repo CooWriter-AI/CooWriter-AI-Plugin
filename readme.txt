@@ -1,41 +1,41 @@
-=== CooWriter AI – Your Seamless AI Writing & Image Generation Assistant ===
+=== CooWriter AI – AI Writing Assistant & Content Generator ===
 Contributors: coowriterai
 Donate link: https://coowriterai.com
-Tags: ai, writing, image, content, assistant
-Requires at least: 5.7
-Tested up to: 6.8
-Stable tag: 0.1.0
+Tags: ai writer, content generator, ai image generator, ai content, gutenberg
+Requires at least: 6.0
+Tested up to: 6.9
+Stable tag: 1.2.0
 Requires PHP: 7.4
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Create high-quality content in minutes, not hours. CooWriter AI helps you draft, polish, and refine content seamlessly — without breaking your flow.
+AI writing assistant for the block editor. Generate blog posts, create AI images, translate, and refine — without leaving Gutenberg.
 
 == Description ==
 
-CooWriter AI is an AI-powered writing assistant that natively integrates with the WordPress Block Editor. Simply tell the AI what you want to write - no forms, no buttons, no leaving the editor. Generate content with simple prompts or detailed instructions, then edit and refine until perfect. Write in minutes, not hours.
+CooWriter AI is an AI-powered writing assistant and content generator that lives inside the WordPress Block Editor. Simply tell it what you want to write. Generate complete blog posts from a single prompt, create AI images, translate content into any language, and refine your writing through conversation. No copy-pasting, no tab-switching — just write and publish.
 
 ## Demo
 
 https://youtu.be/A8ga5mhyRSQ
 
-## Key Features
+## Everything You Need to Publish Faster
 
-* **Native Block Editor Integration**: Seamlessly integrated into WordPress Block Editor - no external interfaces or separate windows
-* **Zero-Click Operation**: No input fields to fill or buttons to click - just natural interaction within your content
-* **Flexible Input**: Works with simple one-line prompts or detailed instructions - you choose the level of detail
-* **Content Refinement**: Edit, refine, and polish AI-generated content until it meets your exact requirements
-* **Selection Mode**: Target specific blocks for modification instead of affecting your entire content
-* **Universal Block Support**: Compatible with all core WordPress blocks out of the box
-* **AI Image Generation**: Create custom images from text descriptions with multiple aspect ratios and automatic Media Library integration
-* **Seamless Workflow**: Never leave the block editor - maintain your creative flow without interruptions
+Every feature eliminates busywork so you can focus on hitting publish.
+
+* **One Prompt. One Complete Post. Done.**: Give CooWriter a single prompt and get a fully structured, ready-to-publish blog post in minutes. While others are still outlining, you'll already be hitting publish.
+* **Make It Sound Exactly Like You**: Generic AI sounds like a robot. CooWriter lets you refine through conversation until every sentence matches your voice. Say "make it punchier" and watch it transform.
+* **Fix One Paragraph Without Rewriting Everything**: Weak intro? Boring conclusion? Select it, regenerate it, done. The rest of your post stays exactly as you wrote it. No more starting over because one section needs work.
+* **Ditch Stock Photos Forever**: Stop scrolling through thousands of generic images that almost fit. Generate custom visuals that perfectly match your content in seconds — no design skills needed.
+* **Reach Global Audiences Without Extra Work**: Translate your content into any language with one click — and keep all your Gutenberg formatting perfectly intact. Go multilingual without the headache.
+* **Zero Copy-Pasting. Zero Tab-Switching.**: CooWriter lives inside your Gutenberg editor. Content generates with proper headings, lists, and formatting — ready to publish the moment it appears. No more wrestling with ChatGPT and clipboard.
 
 ## How It Works
 
 ### For Content Writing:
 1. **Install and Activate**: Add CooWriter AI to your WordPress site
 2. **Open Block Editor**: Create or edit any post or page
-3. **Add CooWriter AI Block**: Insert the block where you want AI assistance
+3. **Open AI Assistant**: Click the floating button in the bottom left corner to open the AI assistant
 4. **Natural Interaction**: Simply describe what you want to write - no forms or complex interfaces
 5. **Instant Generation**: AI creates content based on your prompt or instructions
 6. **Refine as Needed**: Edit and polish the generated content until it's perfect
@@ -73,7 +73,7 @@ By using this plugin, you agree to CooWriter AI's terms of service and privacy p
 
 ## Development & Contribution
 
-CooWriter AI is open source and welcomes contributions! 
+CooWriter AI is open source and welcomes contributions!
 
 * **GitHub Repository**: https://github.com/CooWriter-AI/CooWriter-AI-Plugin
 * **Report Issues**: https://github.com/CooWriter-AI/CooWriter-AI-Plugin/issues
@@ -88,7 +88,7 @@ CooWriter AI is open source and welcomes contributions!
 4. Go to your [profile page](https://coowriterai.com/profile) and click the "Copy API Key" button.
 5. Add the API key to the plugin settings.
 6. Open the Block Editor on any post or page.
-7. Add the CooWriter AI block from the Text category in the block inserter.
+7. Click the floating button in the bottom left corner to open the AI assistant.
 8. Start writing with AI assistance immediately.
 
 == Screenshots ==
@@ -150,8 +150,14 @@ Ask on WordPress Support Forums or write to [support@coowriterai.com](mailto:sup
 = 0.1.0 =
 * Initial release.
 
+= 1.0.0 =
+* Clean UI experience.
+* Floating button to open the assistant instead of block.
+
 == Upgrade Notice ==
 
 = 0.1.0 =
 * Initial release.
 
+= 1.0.0 =
+* Major update with new UI and improved user experience. Floating button replaces block-based access to the assistant for easier use.

@@ -6,7 +6,7 @@
  * Author URI:  https://profiles.wordpress.org/coowriterai
  * License:     GPL-3.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Version:     0.1.0
+ * Version:     1.0.0
  * Text Domain: coowriter-ai
  *
  * @package     CooWriterAI
