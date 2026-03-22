@@ -1,6 +1,6 @@
 {
 	"name": "coowriter-ai",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "AI-powered writing assistant for WordPress Block Editor.",
 	"author": "CooWriter AI",
 	"authorUri": "https://coowriterai.com/",
@@ -20,6 +20,16 @@
 	"bugs": {
 		"url": "https://github.com/CooWriter-AI/CooWriter-AI-Plugin/issues"
 	},
+	"files": [
+		"build/",
+		"includes/",
+		"vendor/",
+		"assets/",
+		"composer.json",
+		"coowriter-ai.php",
+		"readme.txt",
+		"license.txt"
+	],
 	"dependencies": {
 		"@wordpress/media-utils": "^5.30.0",
 		"classnames": "^2.5.1",
@@ -44,6 +54,6 @@
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses --prod",
 		"packages-update": "wp-scripts packages-update",
-		"plugin-zip": "wp-scripts build && wp-scripts plugin-zip"
+		"plugin-zip": "composer install --no-dev --optimize-autoloader && wp-scripts build && wp-scripts plugin-zip && composer install"
 	}
 }
